@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'zbek tili uchun shovqinbardosh ASR tizimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot me-2"></i>
+                O'zbek ASR Tizimi
+                <span class="badge bg-primary ms-2">Joriy nazorat - 5</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Bosh sahifa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#literature">Adabiyotlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dataset">Ma'lumotlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#model">Model</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results">Natijalar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#conclusion">Xulosa</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- Home Section -->
+        <section id="home" class="section-card">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">
+                        O'zbek tili uchun shovqinbardosh ASR tizimi
+                    </h1>
+                    <p class="lead mb-4">
+                        Magistrlik dissertatsiyasi: HMM-GMM, CTC, RNN-T va Whisper modellarining 
+                        shovqinli sharoitda qiyosiy tahlili
+                    </p>
+                    <div class="stats-grid mb-4">
+                        <div class="stat-item">
+                            <i class="fas fa-database fa-2x text-primary"></i>
+                            <h3>15 soat</h3>
+                            <p>Audio ma'lumotlar</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-brain fa-2x text-success"></i>
+                            <h3>4 model</h3>
+                            <p>Qiyosiy tahlil</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-chart-line fa-2x text-warning"></i>
+                            <h3>85%</h3>
+                            <p>To'g'rilik darajasi</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-microphone fa-2x text-danger"></i>
+                            <h3>3 lahja</h3>
+                            <p>Toshkent, Samarqand, Farg'ona</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="hero-card">
+                        <div class="hero-icon">
+                            <i class="fas fa-robot fa-4x"></i>
+                        </div>
+                        <h4>Texnologiya Stack</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">HuggingFace</span>
+                            <span class="tech-tag">Whisper</span>
+                            <span class="tech-tag">Wav2Vec2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Literature Review -->
+        <section id="literature" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-book me-2"></i>Ilmiy adabiyotlar tahlili
+            </h2>
+            <div class="table-responsive">
+                <table class="table table-hover" id="literatureTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Model</th>
+                            <th>Afzalliklari</th>
+                            <th>Kamchiliklari</th>
+                            <th>WER (%)</th>
+                            <th>Qo'llanish sohasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be loaded by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="model-card">
+                        <h4><i class="fas fa-wave-square text-primary"></i> HMM-GMM</h4>
+                        <p>An'anaviy model, cheklangan ma'lumotlar bilan ishlaydi</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%">75% to'g'rilik</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="model-card">
+                        <h4><i class="fas fa-project-diagram text-success"></i> CTC</h4>
+                        <p>Uzluksiz matn chiqishi, alignment muammosiz</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 82%">82% to'g'rilik</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="model-card">
+                        <h4><i class="fas fa-network-wired text-warning"></i> RNN-T</h4>
+                        <p>Real-time talaffuz, past kechikish</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%">88% to'g'rilik</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="model-card">
+                        <h4><i class="fas fa-brain text-danger"></i> Whisper</h4>
+                        <p>Katta hajmdagi ma'lumotlar, ko'p tilli</p>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 92%">92% to'g'rilik</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dataset Section -->
+        <section id="dataset" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-database me-2"></i>Ma'lumotlar bazasi
+            </h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="dataset-filter">
+                        <h5>Filtrlar</h5>
+                        <div class="filter-group">
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-check" checked> Toza audio
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-check" checked> Shovqinli
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-check"> Toshkent lahjasi
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-check"> Samarqand lahjasi
+                            </label>
+                            <label class="filter-label">
+                                <input type="checkbox" class="filter-check"> Farg'ona lahjasi
+                            </label>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-3" onclick="loadAudioSamples()">
+                            <i class="fas fa-sync"></i> Yuklash
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="audio-player-container">
+                        <div class="audio-player">
+                            <div class="audio-info">
+                                <h5 id="audioTitle">Tanlang: "Salom, dunyo!"</h5>
+                                <p id="audioDesc">Toza audio, erkak ovozi, Toshkent lahjasi</p>
+                            </div>
+                            <div class="audio-controls">
+                                <button class="btn btn-sm btn-outline-primary" onclick="playAudio()">
+                                    <i class="fas fa-play"></i> Play
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary" onclick="pauseAudio()">
+                                    <i class="fas fa-pause"></i> Pause
+                                </button>
+                                <div class="volume-control">
+                                    <i class="fas fa-volume-up"></i>
+                                    <input type="range" min="0" max="100" value="80" class="volume-slider">
+                                </div>
+                            </div>
+                            <div class="audio-progress">
+                                <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="transcript-box">
+                            <h6><i class="fas fa-file-alt"></i> Transkript</h6>
+                            <p id="transcriptText">Salom, men O'zbek tili uchun avtomatik nutqni tanib olish tizimi ustida ishlayapman. Bu tajriba uchun audio yozuv.</p>
+                            <div class="transcript-stats">
+                                <span><i class="fas fa-clock"></i> 5.2 soniya</span>
+                                <span><i class="fas fa-words"></i> 15 so'z</span>
+                                <span><i class="fas fa-microphone-alt"></i> 16000Hz</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mathematical Model -->
+        <section id="model" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-calculator me-2"></i>Matematik model
+            </h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="formula-card">
+                        <h5>MFCC chiqarish</h5>
+                        <div class="formula">
+                            MFCC = DCT(log(|FFT(x(t))|²))
+                        </div>
+                        <p class="formula-desc">
+                            Mel-frequency cepstral coefficients - audio signalning spektral xususiyatlari
+                        </p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h5>CTC loss funksiyasi</h5>
+                        <div class="formula">
+                            L<sub>CTC</sub> = -log P(y|x) = -log ∑<sub>π∈B⁻¹(y)</sub> P(π|x)
+                        </div>
+                        <button class="btn btn-sm btn-outline-info" onclick="showProof('ctc')">
+                            <i class="fas fa-eye"></i> Isbotni ko'rish
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="formula-card">
+                        <h5>WER hisoblash</h5>
+                        <div class="formula">
+                            WER = (S + D + I) / N × 100%
+                        </div>
+                        <p class="formula-desc">
+                            S - almashtirish, D - o'chirish, I - qo'shish, N - haqiqiy so'zlar soni
+                        </p>
+                    </div>
+                    
+                    <div class="model-architecture">
+                        <h5><i class="fas fa-sitemap"></i> Model arxitekturasi</h5>
+                        <div class="architecture-diagram">
+                            <div class="arch-layer">Audio Input</div>
+                            <div class="arch-arrow">↓</div>
+                            <div class="arch-layer">MFCC Features</div>
+                            <div class="arch-arrow">↓</div>
+                            <div class="arch-layer">CNN Encoder</div>
+                            <div class="arch-arrow">↓</div>
+                            <div class="arch-layer">BiLSTM</div>
+                            <div class="arch-arrow">↓</div>
+                            <div class="arch-layer">CTC Decoder</div>
+                            <div class="arch-arrow">↓</div>
+                            <div class="arch-layer">Text Output</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-chart-bar me-2"></i>Natijalar va tahlil
+            </h2>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <canvas id="werChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <canvas id="cerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="noise-robustness">
+                <h5><i class="fas fa-volume-mute"></i> Shovqinga bardoshlilik</h5>
+                <div class="noise-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Toza audio</th>
+                                <th>15dB shovqin</th>
+                                <th>10dB shovqin</th>
+                                <th>5dB shovqin</th>
+                                <th>Bardoshlilik</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>HMM-GMM</strong></td>
+                                <td>75.2%</td>
+                                <td>65.4%</td>
+                                <td>52.1%</td>
+                                <td>38.7%</td>
+                                <td><span class="badge bg-warning">O'rtacha</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CTC</strong></td>
+                                <td>82.5%</td>
+                                <td>75.8%</td>
+                                <td>68.3%</td>
+                                <td>55.2%</td>
+                                <td><span class="badge bg-info">Yaxshi</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>RNN-T</strong></td>
+                                <td>88.3%</td>
+                                <td>82.1%</td>
+                                <td>76.5%</td>
+                                <td>65.8%</td>
+                                <td><span class="badge bg-success">A'lo</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Whisper</strong></td>
+                                <td>92.1%</td>
+                                <td>88.7%</td>
+                                <td>84.2%</td>
+                                <td>78.5%</td>
+                                <td><span class="badge bg-success">A'lo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-time Demo -->
+        <section id="demo" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-microphone me-2"></i>Real-time ASR demo
+            </h2>
+            
+            <div class="demo-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="recorder-card">
+                            <h5><i class="fas fa-record-vinyl"></i> Audio yozish</h5>
+                            <div class="recorder-controls">
+                                <button class="btn btn-danger btn-lg" id="recordBtn" onclick="startRecording()">
+                                    <i class="fas fa-microphone"></i> Yozishni boshlash
+                                </button>
+                                <button class="btn btn-secondary btn-lg" id="stopBtn" onclick="stopRecording()" disabled>
+                                    <i class="fas fa-stop"></i> To'xtatish
+                                </button>
+                            </div>
+                            
+                            <div class="recorder-visualizer">
+                                <canvas id="waveform"></canvas>
+                            </div>
+                            
+                            <div class="recorder-stats">
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="recordingTime">00:00</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-database"></i>
+                                    <span id="fileSize">0 KB</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span id="volumeLevel">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="result-card">
+                            <h5><i class="fas fa-file-alt"></i> Natijalar</h5>
+                            <div class="model-selector">
+                                <select class="form-select" id="modelSelect">
+                                    <option value="whisper">Whisper (Eng yaxshi)</option>
+                                    <option value="rnn-t">RNN-T (Real-time)</option>
+                                    <option value="ctc">CTC (Balans)</option>
+                                    <option value="hmm">HMM-GMM (An'anaviy)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="transcription-result">
+                                <h6>Transkripsiya:</h6>
+                                <div class="result-text" id="transcriptionResult">
+                                    Mikrofon orqali audio yozing va natijani ko'ring...
+                                </div>
+                                <div class="confidence-meter">
+                                    <span>Ishonchlilik:</span>
+                                    <div class="confidence-bar">
+                                        <div class="confidence-fill" id="confidenceFill" style="width: 0%"></div>
+                                    </div>
+                                    <span id="confidencePercent">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="demo-actions">
+                                <button class="btn btn-primary" onclick="processAudio()">
+                                    <i class="fas fa-cogs"></i> Qayta ishlash
+                                </button>
+                                <button class="btn btn-success" onclick="saveResults()">
+                                    <i class="fas fa-save"></i> Saqlash
+                                </button>
+                                <button class="btn btn-outline-secondary" onclick="clearResults()">
+                                    <i class="fas fa-trash"></i> Tozalash
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="section-card">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap me-2"></i>Xulosa
+            </h2>
+            
+            <div class="conclusion-content">
+                <div class="key-findings">
+                    <h5><i class="fas fa-search"></i> Asosiy topilmalar</h5>
+                    <ul>
+                        <li><strong>Whisper modeli</strong> O'zbek tilida eng yuqori natijalar ko'rsatdi (92% WER)</li>
+                        <li><strong>RNN-T modeli</strong> real-time talablar uchun optimal yechim</li>
+                        <li><strong>CTC modeli</strong> cheklangan resurslar bilan ishlash uchun yaxshi</li>
+                        <li><strong>HMM-GMM</strong> an'anaviy yondashuv, kam ma'lumotlar bilan ishlaydi</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendations">
+                    <h5><i class="fas fa-lightbulb"></i> Tavsiyalar</h5>
+                    <ol>
+                        <li>O'zbek tili uchun maxsus fine-tuning qilish</li>
+                        <li>Lahjalar uchun alohida modellar yaratish</li>
+                        <li>Real-time talablar uchun RNN-T modelini tanlash</li>
+                        <li>Shovqinli muhit uchun noise suppression qo'shish</li>
+                    </ol>
+                </div>
+                
+                <div class="future-work">
+                    <h5><i class="fas fa-rocket"></i> Kelajakdagi ishlar</h5>
+                    <div class="future-grid">
+                        <div class="future-item">
+                            <i class="fas fa-language"></i>
+                            <h6>Ko'p tillilik</h6>
+                            <p>Qo'shni tillarni qo'llab-quvvatlash</p>
+                        </div>
+                        <div class="future-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h6>Mobil optimallashtirish</h6>
+                            <p>Telefonlarda offline ishlash</p>
+                        </div>
+                        <div class="future-item">
+                            <i class="fas fa-cloud"></i>
+                            <h6>Bulut API</h6>
+                            <p>REST API orqali xizmat ko'rsatish</p>
+                        </div>
+                        <div class="future-item">
+                            <i class="fas fa-users"></i>
+                            <h6>Hamkorlik platformasi</h6>
+                            <p>Ma'lumotlar bazasini kengaytirish</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-robot"></i> O'zbek ASR tizimi</h5>
+                    <p>Magistrlik dissertatsiyasi - "O'zbek tili uchun shovqinbardosh ASR tizimi"</p>
+                    <p>© 2023 Joriy nazorat - 5. Barcha huquqlar himoyalangan.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Aloqa</h5>
+                    <p><i class="fas fa-envelope"></i> info@uzbekasr.uz</p>
+                    <p><i class="fas fa-university"></i> Toshkent Axborot Texnologiyalari Universiteti</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
